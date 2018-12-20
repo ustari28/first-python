@@ -7,3 +7,5 @@ input = parser.parse_args()
 
 print(input)
 print(input.__getattribute__('foo'))
+#import doctest
+#doctest.testmod()   # automatically validate the embedded tests
