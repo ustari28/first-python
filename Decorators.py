@@ -27,3 +27,21 @@ def logging(func):
         print("Finishing time %s", func.__name__)
         return val
     return wrapper
+
+
+def serializable(cls):
+    class wrapper:
+        def __init__(self, *args):
+            self.wrapped = cls(*args)
+
+        def __getattr__(self, *args):
+            return getattr(self.wrapped, *args)
+
+        def serialize(self):
+            return jsonpickle.encode(self.wrapped)
+
+    @staticmethod
+    def deserialize(ser_str):
+        return jsonpickle.decode(ser_str)
+
+    return wrapper

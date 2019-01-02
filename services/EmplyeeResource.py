@@ -1,5 +1,5 @@
 from flask import request
-from flask_restful import Resource, marshal_with, reqparse
+from flask_restful import Resource, marshal_with
 
 from Decorators import logging
 from model.Employe import Employee
