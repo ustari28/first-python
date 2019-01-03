@@ -1,0 +1,14 @@
+py:
+  application:
+    name: PyRest
+    url: https://localhost
+server:
+  port: 5000
+darwin:
+  security:
+    mode: on
+    type: token
+  logging:
+    root: INFO
+    package: com.santander.darwin
+oracle: thin

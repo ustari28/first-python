@@ -9,7 +9,7 @@ def security(option):
 
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
-            print("Option {}", option)
+            print("Option", option)
             return func(*args, **kwargs)
 
         return wrapper
@@ -29,3 +29,15 @@ def logging(func):
         return val
 
     return wrapper
+
+
+# Singleton decorator
+class Singleton:
+    def __init__(self, cls):
+        self.cls = cls
+        self.instance = None
+
+    def __call__(self, *args, **kwargs):
+        if self.instance is None:
+            self.instance = self.cls(*args, **kwargs)
+        return self.instance
