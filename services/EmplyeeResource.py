@@ -1,3 +1,4 @@
+import webapp2
 from flask import request
 from flask_restful import Resource, marshal_with
 
@@ -6,7 +7,7 @@ from model.Employe import Employee
 from model.Person import Person
 
 
-class EmployeeResource(Resource):
+class EmployeeResource(webapp2.RequestHandler):
 
     @marshal_with(Person.get_marshall())
     @logging

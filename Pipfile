@@ -11,6 +11,7 @@ flask-restful = "*"
 flask-rest-jsonapi = "*"
 requests = "*"
 pyyaml = "*"
+webapp2 = "*"
 
 [requires]
 python_version = "3.7"

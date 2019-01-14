@@ -1,8 +1,3 @@
-import json
-
-from flask_restful import fields
-
-
 class Employee(object):
     def __init__(self, name):
         self.name = name
@@ -10,8 +5,8 @@ class Employee(object):
         self.profession = ""
 
     @staticmethod
-    def get_marshall():
+    def get_marshall(obj):
         return {
-            'name': fields.String,
-            'years_old': fields.Integer
+            'name': obj.name,
+            'years_old': obj.years_old
         }
