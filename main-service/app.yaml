@@ -1,0 +1,15 @@
+service: main-service
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+  - url: /.*
+    script: main.app
+
+# [START libraries]
+libraries:
+  - name: webapp2
+    version: latest
+  - name: ssl
+    version: latest
