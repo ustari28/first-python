@@ -37,3 +37,7 @@ Configure the app.yml that it starts your application
 ```
 dev_appserver.py app.yml
 ```
+Before to deploy a service we must deploy the default service. After we deploy from inside the module's directory
+```
+gcloud app deploy --project PROJECT_ID app.yaml
+```
